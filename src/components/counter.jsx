@@ -13,17 +13,19 @@ class Counter extends Component {
     } */
 
     // methode 2 : Utiliser Arrow Function
-    handleIncrement = () => {
+    handleIncrement = product => {
+      console.log(product);
       // Utiliser setState pour afficher le changement de valeur dans UI
       this.setState({ count: this.state.count + 1})
     }
+
 
     render() {
   
       return(
         <div> 
         <span  className={this.getBadgeClasses()}>{this.formatCount()}</span> 
-        <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">Incerement</button>
+        <button onClick={() => this.handleIncrement({id:1})} className="btn btn-secondary btn-sm">Incerement</button>
       </div>
       );
     }
