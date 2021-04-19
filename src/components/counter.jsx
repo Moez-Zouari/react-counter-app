@@ -14,8 +14,8 @@ class Counter extends Component {
 
     // methode 2 : Utiliser Arrow Function
     handleIncrement = () => {
-      
-      console.log('Increment Clicked', this);
+      // Utiliser setState pour afficher le changement de valeur dans UI
+      this.setState({ count: this.state.count + 1})
     }
 
     render() {
@@ -30,11 +30,12 @@ class Counter extends Component {
 
     formatCount() {
       const { count } = this.state;
+      return    count === 0 ? "Zero" : count;
     }
 
     getBadgeClasses() {
       let classes = "badge m-2 badge-";
-      classes += (this.state.count === 0) ? "warning" : "primary";
+      classes += this.state.count === 0 ? "warning" : "primary";
       return classes;
   }
 
