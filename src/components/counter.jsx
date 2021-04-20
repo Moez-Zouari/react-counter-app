@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   state = {
-    value: this.props.value,
+    value: this.props.counter.value,
   };
 
   /*    // Methode 1 , utiliser bind et un constructeur pour  resoudre le probleme de undifiend
@@ -30,7 +30,7 @@ class Counter extends Component {
           Incerement
         </button>
         <button
-          onClick={this.props.onDelete}
+          onClick={() => this.props.onDelete(this.props.counter.id)}
           className="btn btn-danger btn-sm m-2"
         >
           Delete
