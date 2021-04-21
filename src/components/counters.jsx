@@ -2,11 +2,6 @@ import React, { Component } from "react";
 import Counter from "./counter";
 
 class Counters extends Component {
-  componentDidUpdate(prevProps, prevState) {
-    console.log("prevProps", prevProps);
-    console.log("prevState", prevState);
-  }
-
   render() {
     console.log("counters - Rendered");
     const { onReset, onDelete, onIncrement, counters } = this.props;
